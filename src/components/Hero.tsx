@@ -290,7 +290,7 @@ export default function Hero() {
                                 variants={itemVariants}
                                 className="text-xl md:text-2xl text-base-content/90 mb-2"
                             >
-                                4th Year Software Engineering Student
+                                Software Engineering Student
                             </motion.p>
                             <motion.p
                                 variants={itemVariants}
