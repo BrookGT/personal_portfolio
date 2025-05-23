@@ -3,7 +3,13 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+const inter = Inter({
+    subsets: ["latin"],
+    variable: "--font-inter",
+    display: "swap",
+    preload: true,
+    fallback: ["system-ui", "arial"],
+});
 
 export const metadata: Metadata = {
     title: "Biruk GT | Software Engineer & UI/UX Designer",
