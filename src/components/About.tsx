@@ -153,12 +153,11 @@ export default function About() {
                     {/* Content Side */}
                     <motion.div variants={itemVariants} className="space-y-8">
                         <p className="text-lg text-base-content/80">
-                            I am a 4th year Software Engineering student at
-                            Adama Science and Technology University, passionate
-                            about creating beautiful and functional digital
-                            experiences. With expertise in both development and
-                            design, I bridge the gap between aesthetics and
-                            functionality.
+                            I am Software Engineering student at Adama Science
+                            and Technology University, passionate about creating
+                            beautiful and functional digital experiences. With
+                            expertise in both development and design, I bridge
+                            the gap between aesthetics and functionality.
                         </p>
 
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
