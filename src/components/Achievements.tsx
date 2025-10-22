@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 const achievements = [
     {
         title: "LeetCode",
-        stats: "400+ Problems Solved",
+        stats: "200+ Problems Solved",
         icon: "💻",
         color: "from-blue-500 to-blue-600",
     },

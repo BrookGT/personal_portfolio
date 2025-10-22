@@ -30,24 +30,47 @@ const projects = [
         codeLink: "https://github.com/BrookGT/Library-Management-System",
     },
     {
-        title: "Easy Rent Mobile App",
-        description:
-            "React Native app with chat and geolocation search by posted house coordinates.",
+        title: "Melanated E-commerce Website",
+        description: "Built with Next.js",
         images: [
-            "/assets/easy rent mobile app1.png",
-            "/assets/easy rent mobile app 2.png",
-            "/assets/easy rent mobile app 3.png",
-            "/assets/easy rent mobile app 4.png",
-            "/assets/easy rent mobile app 5.png",
-            "/assets/easy rent mobile app 6.png",
-            "/assets/easy rent mobile app 7.png",
-            "/assets/easy rent mobile app 8.png",
-            "/assets/easy rent mobile app 9.png",
-            "/assets/easy rent mobile app 10.png",
-            "/assets/easy rent mobile app 11.png",
+            "/assets/e commerce website 1.png",
+            "/assets/e commerce website 2.png",
+            "/assets/e commerce website 3.png",
+            "/assets/e commerce website 4.png",
+            "/assets/e commerce website 5.png",
         ],
-        techStack: ["React Native", "Firebase", "Google Maps API"],
-        codeLink: "https://github.com/BrookGT/rent-bridge-app",
+        techStack: ["Next.js", "Tailwind CSS"],
+        siteLink: "https://melanated-princess-website-b8vc.vercel.app/",
+    },
+    {
+        title: "Fitness App UI Design",
+        description: "UI design and prototype created with Figma.",
+        images: [
+            "/assets/Fitness app ui 1.png",
+            "/assets/Fitness app ui 2.png",
+            "/assets/Fitness app ui 3.png",
+            "/assets/Fitness app ui 4.png",
+            "/assets/Fitness app ui 5.png",
+        ],
+        techStack: ["Figma", "UI/UX Design"],
+        figmaLink:
+            "https://www.figma.com/design/eLjv97lAAr3qZcV2SMGt6W/REV-Fitness?node-id=1-19&t=V544XnHhHkPcyoNy-1",
+    },
+    {
+        title: "Live Communication Platform",
+        description:
+            "Real-time communication platform built with Next.js (frontend), NestJS (backend), Socket.IO and WebRTC.",
+        images: [
+            "/assets/live communication platform 1.png",
+            "/assets/live communication platform 2.png",
+            "/assets/live communication platform 3.png",
+            "/assets/live communication platform 4.png",
+            "/assets/live communication platform 5.png",
+            "/assets/live communication platform 6.png",
+        ],
+        techStack: ["Next.js", "NestJS", "Socket.IO", "WebRTC"],
+        codeLink: "https://github.com/BrookGT/lcp-frontend",
+        backendLink: "https://github.com/BrookGT/lcp-backend",
     },
     {
         title: "Easy Rent Mobile UI/UX",
@@ -270,6 +293,22 @@ export default function Projects() {
 
                                 {/* Project Links */}
                                 <div className="flex gap-3">
+                                    {project.siteLink && (
+                                        <motion.div
+                                            whileHover={{ scale: 1.05 }}
+                                            whileTap={{ scale: 0.95 }}
+                                        >
+                                            <Link
+                                                href={project.siteLink}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="btn btn-primary btn-sm transition-all duration-200 hover:shadow-lg"
+                                            >
+                                                Live Site
+                                            </Link>
+                                        </motion.div>
+                                    )}
+
                                     {project.codeLink && (
                                         <motion.div
                                             whileHover={{ scale: 1.05 }}
@@ -293,6 +332,23 @@ export default function Projects() {
                                             </Link>
                                         </motion.div>
                                     )}
+
+                                    {project.backendLink && (
+                                        <motion.div
+                                            whileHover={{ scale: 1.05 }}
+                                            whileTap={{ scale: 0.95 }}
+                                        >
+                                            <Link
+                                                href={project.backendLink}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="btn btn-outline btn-sm transition-all duration-200 hover:shadow-lg"
+                                            >
+                                                Backend
+                                            </Link>
+                                        </motion.div>
+                                    )}
+
                                     {project.figmaLink && (
                                         <motion.div
                                             whileHover={{ scale: 1.05 }}
@@ -304,14 +360,6 @@ export default function Projects() {
                                                 rel="noopener noreferrer"
                                                 className="btn btn-outline btn-sm transition-all duration-200 hover:shadow-lg"
                                             >
-                                                <svg
-                                                    className="w-4 h-4 mr-2"
-                                                    fill="currentColor"
-                                                    viewBox="0 0 24 24"
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                                >
-                                                    <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-1.31 7.526c-.099-.807.528-1.526 1.348-1.526.771 0 1.377.676 1.28 1.451l-.757 6.053c-.035.283-.276.496-.561.496s-.526-.213-.562-.496l-.748-5.978zm7.79 0c-.099-.807.528-1.526 1.348-1.526.771 0 1.377.676 1.28 1.451l-.757 6.053c-.035.283-.276.496-.561.496s-.526-.213-.562-.496l-.748-5.978zm-7.79 7.948c-.099-.807.528-1.526 1.348-1.526.771 0 1.377.676 1.28 1.451l-.757 6.053c-.035.283-.276.496-.561.496s-.526-.213-.562-.496l-.748-5.978zm7.79 0c-.099-.807.528-1.526 1.348-1.526.771 0 1.377.676 1.28 1.451l-.757 6.053c-.035.283-.276.496-.561.496s-.526-.213-.562-.496l-.748-5.978z" />
-                                                </svg>
                                                 Figma
                                             </Link>
                                         </motion.div>
