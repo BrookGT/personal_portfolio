@@ -61,7 +61,7 @@ const skills = [
     {
         category: "Mobile",
         items: [
-            { name: "React Native", icon: "📱", level: "Advanced" },
+            { name: "React Native", icon: "📱", level: "Expert" },
             { name: "Flutter", icon: "🎯", level: "Advanced" },
         ],
     },

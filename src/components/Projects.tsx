@@ -13,6 +13,23 @@ import { useState, useEffect } from "react";
 
 const projects = [
     {
+        title: "Bete Mobile App",
+        description:
+            "Developed a Bete mobile application that allows users to post rental listings or property to sell with location and enables in-app messaging between renters and landlords. It also includes a rent management system for tracking rental due dates.",
+        images: [
+            "/assets/Bete mobile app 1.png",
+            "/assets/Bete mobile app 2.png",
+            "/assets/Bete mobile app 3.png",
+            "/assets/Bete mobile app 4.png",
+            "/assets/Bete mobile app 5.png",
+            "/assets/Bete mobile app 6.png",
+            "/assets/Bete mobile app 7.png",
+            "/assets/Bete mobile app 8.png",
+            "/assets/Bete mobile app 9.png",
+        ],
+        techStack: ["React Native", "Expo", "TypeScript"],
+    },
+    {
         title: "Library Management System",
         description:
             "Full-stack website with user pages and admin dashboard with live activity feed.",
