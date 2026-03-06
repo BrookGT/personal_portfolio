@@ -27,14 +27,21 @@ const experiences = [
 
 export default function Experience() {
     return (
-        <section id="experience" className="section-padding bg-base-200">
-            <div className="container mx-auto px-4">
-                <div className="text-center mb-12 space-y-3">
-                    <p className="pill mx-auto">Experience</p>
+        <motion.section
+            id="experience"
+            className="section-padding bg-base-200"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.3 }}
+            transition={{ duration: 0.65, ease: "easeOut" }}
+        >
+            <div className="container-shell">
+                <div className="mb-12 space-y-3 text-left max-w-3xl mx-auto lg:mx-0">
+                    <p className="pill w-fit">Experience</p>
                     <h2 className="text-3xl md:text-4xl font-display font-bold">
                         Where design, code, and delivery meet
                     </h2>
-                    <p className="text-base-content/80 max-w-2xl mx-auto">
+                    <p className="text-base-content/80 max-w-2xl">
                         Practical roles blending UX strategy, prototyping, and
                         production engineering.
                     </p>
@@ -67,7 +74,15 @@ export default function Experience() {
                                 <div
                                     className={`md:w-1/2 ${index % 2 === 0 ? "md:pr-8" : "md:pl-8"}`}
                                 >
-                                    <div className="glass-panel rounded-2xl p-6 shadow-ring">
+                                    <motion.div
+                                        whileHover={{ y: -4, scale: 1.01 }}
+                                        transition={{
+                                            type: "spring",
+                                            stiffness: 220,
+                                            damping: 20,
+                                        }}
+                                        className="glass-panel rounded-2xl p-6 shadow-ring"
+                                    >
                                         <div className="flex items-center justify-between mb-3">
                                             <h3 className="text-xl font-semibold text-base-content">
                                                 {experience.title}
@@ -94,13 +109,13 @@ export default function Experience() {
                                                 ),
                                             )}
                                         </ul>
-                                    </div>
+                                    </motion.div>
                                 </div>
                             </motion.div>
                         ))}
                     </div>
                 </div>
             </div>
-        </section>
+        </motion.section>
     );
 }

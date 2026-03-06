@@ -201,7 +201,7 @@ export default function Projects() {
 
     return (
         <section id="projects" className="section-padding bg-base-100">
-            <div className="container mx-auto px-4">
+            <div className="container-shell">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -231,6 +231,7 @@ export default function Projects() {
                             key={project.title}
                             variants={projectVariants}
                             whileHover="hover"
+                            whileTap={{ scale: 0.99 }}
                             className="group relative rounded-2xl overflow-hidden glass-panel shadow-ring"
                             onHoverStart={() => setHoveredProject(index)}
                             onHoverEnd={() => {

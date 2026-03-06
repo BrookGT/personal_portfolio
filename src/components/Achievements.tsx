@@ -35,7 +35,7 @@ const dsaTopics = [
 export default function Achievements() {
     return (
         <section id="achievements" className="section-padding bg-base-100">
-            <div className="container mx-auto px-4">
+            <div className="container-shell">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}

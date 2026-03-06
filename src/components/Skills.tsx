@@ -72,7 +72,7 @@ const skills = [
 export default function Skills() {
     return (
         <section id="skills" className="section-padding bg-base-200">
-            <div className="container mx-auto px-4">
+            <div className="container-shell">
                 <div className="text-center mb-12 space-y-3">
                     <p className="pill mx-auto">Skills</p>
                     <h2 className="text-3xl md:text-4xl font-display font-bold">

@@ -72,6 +72,10 @@
         @apply container mx-auto px-4 sm:px-6 lg:px-8;
     }
 
+    .container-shell {
+        @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+    }
+
     .glass-panel {
         @apply bg-base-100/70 backdrop-blur-xl border border-base-200 shadow-xl;
     }

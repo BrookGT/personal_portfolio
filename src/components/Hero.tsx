@@ -9,6 +9,24 @@ const heroBadges = [
     "Builder of resilient, responsive experiences",
 ];
 
+const heroContainer = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+        opacity: 1,
+        y: 0,
+        transition: { duration: 0.6, ease: "easeOut", staggerChildren: 0.08 },
+    },
+};
+
+const heroItem = {
+    hidden: { opacity: 0, y: 16 },
+    visible: {
+        opacity: 1,
+        y: 0,
+        transition: { duration: 0.5, ease: "easeOut" },
+    },
+};
+
 const stats = [
     {
         label: "Projects shipped",
@@ -30,22 +48,37 @@ export default function Hero() {
     };
 
     return (
-        <section className="relative min-h-[90vh] flex items-center overflow-hidden">
+        <motion.section
+            className="relative min-h-[90vh] flex items-start overflow-hidden pt-10"
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.35 }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+        >
             <div className="absolute inset-0 opacity-80">
                 <div className="absolute -left-16 top-10 h-72 w-72 rounded-full bg-primary/20 blur-3xl" />
                 <div className="absolute right-0 bottom-10 h-80 w-80 rounded-full bg-accent/20 blur-3xl" />
                 <div className="absolute inset-0 grid-lines" />
             </div>
 
-            <div className="container mx-auto px-4 relative z-10 pt-24 pb-16">
-                <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-12 items-center">
-                    <div className="space-y-8">
-                        <div className="pill w-fit shadow-ring">
+            <div className="container-shell relative z-10 pt-24 pb-16">
+                <div className="grid lg:grid-cols-[1.08fr_0.92fr] gap-12 lg:gap-14 xl:gap-16 items-start">
+                    <motion.div
+                        variants={heroContainer}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true, amount: 0.6 }}
+                        className="space-y-8"
+                    >
+                        <motion.div
+                            variants={heroItem}
+                            className="pill w-fit shadow-ring"
+                        >
                             <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
                             Shipping thoughtful digital products
-                        </div>
+                        </motion.div>
 
-                        <div className="space-y-4">
+                        <motion.div variants={heroItem} className="space-y-4">
                             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold leading-tight">
                                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent">
                                     Biruk Gebisa
@@ -59,21 +92,25 @@ export default function Hero() {
                                 crisp visuals, and reliable code to ship modern
                                 experiences.
                             </p>
-                        </div>
+                        </motion.div>
 
-                        <div className="space-y-3">
+                        <motion.div variants={heroItem} className="space-y-3">
                             {heroBadges.map((item) => (
-                                <div
+                                <motion.div
                                     key={item}
                                     className="flex items-center gap-3 text-base text-base-content/80"
+                                    whileHover={{ x: 4 }}
                                 >
                                     <span className="h-1.5 w-6 rounded-full bg-gradient-to-r from-primary to-secondary" />
                                     {item}
-                                </div>
+                                </motion.div>
                             ))}
-                        </div>
+                        </motion.div>
 
-                        <div className="flex flex-col sm:flex-row gap-3">
+                        <motion.div
+                            variants={heroItem}
+                            className="flex flex-col sm:flex-row gap-3"
+                        >
                             <motion.button
                                 whileHover={{ scale: 1.03, y: -2 }}
                                 whileTap={{ scale: 0.98 }}
@@ -90,12 +127,21 @@ export default function Hero() {
                             >
                                 Book a call
                             </motion.button>
-                        </div>
+                        </motion.div>
 
-                        <div className="grid sm:grid-cols-3 gap-4">
+                        <motion.div
+                            variants={heroItem}
+                            className="grid sm:grid-cols-3 gap-4"
+                        >
                             {stats.map((stat) => (
-                                <div
+                                <motion.div
                                     key={stat.label}
+                                    whileHover={{ y: -6, scale: 1.02 }}
+                                    transition={{
+                                        type: "spring",
+                                        stiffness: 220,
+                                        damping: 18,
+                                    }}
                                     className="p-4 rounded-xl glass-panel shadow-ring relative overflow-hidden"
                                 >
                                     <div className="absolute inset-0 bg-gradient-to-br opacity-20" />
@@ -107,16 +153,28 @@ export default function Hero() {
                                     >
                                         {stat.value}
                                     </p>
-                                </div>
+                                </motion.div>
                             ))}
-                        </div>
-                    </div>
+                        </motion.div>
+                    </motion.div>
 
-                    <div className="relative">
+                    <motion.div
+                        variants={heroContainer}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true, amount: 0.5 }}
+                        className="relative"
+                        whileHover={{ y: -6 }}
+                        transition={{
+                            type: "spring",
+                            stiffness: 200,
+                            damping: 18,
+                        }}
+                    >
                         <div className="absolute -inset-6 bg-gradient-to-br from-primary/10 via-secondary/10 to-accent/10 blur-3xl" />
-                        <div className="relative glass-panel rounded-2xl p-6 shadow-ring">
-                            <div className="flex items-center gap-4 mb-6">
-                                <div className="relative h-16 w-16 rounded-2xl overflow-hidden border border-base-200 shadow-lg">
+                        <div className="relative glass-panel rounded-2xl p-7 shadow-ring">
+                            <div className="flex items-center gap-5 mb-6">
+                                <div className="relative h-24 w-24 rounded-3xl overflow-hidden border border-base-200 shadow-lg">
                                     <Image
                                         src="/assets/photo6.jpg"
                                         alt="Biruk GT"
@@ -125,12 +183,15 @@ export default function Hero() {
                                         priority
                                     />
                                 </div>
-                                <div>
+                                <div className="space-y-1">
                                     <p className="text-sm text-base-content/60">
-                                        Biruk Gebisa
+                                        Biruk GT
                                     </p>
                                     <p className="text-lg font-semibold">
-                                        Software Engineer · UI/UX
+                                        Biruk Gebisa
+                                    </p>
+                                    <p className="text-sm text-base-content/70">
+                                        Product Engineer · UI/UX Systems
                                     </p>
                                     <p className="text-sm text-base-content/60">
                                         Adama, Ethiopia
@@ -148,10 +209,23 @@ export default function Hero() {
                                             Product-first
                                         </span>
                                     </div>
-                                    <p className="text-base font-medium mt-2">
-                                        Web & mobile apps, design systems,
-                                        real-time experiences.
-                                    </p>
+                                    <ul className="mt-3 space-y-2 text-sm text-base-content/80">
+                                        <li className="flex items-start gap-2">
+                                            <span className="mt-1 h-1.5 w-1.5 rounded-full bg-primary" />
+                                            Design systems, tokens,
+                                            accessibility
+                                        </li>
+                                        <li className="flex items-start gap-2">
+                                            <span className="mt-1 h-1.5 w-1.5 rounded-full bg-secondary" />
+                                            Web + mobile product builds with
+                                            clear handoff
+                                        </li>
+                                        <li className="flex items-start gap-2">
+                                            <span className="mt-1 h-1.5 w-1.5 rounded-full bg-accent" />
+                                            Real-time experiences & performance
+                                            tuning
+                                        </li>
+                                    </ul>
                                 </div>
 
                                 <div className="grid grid-cols-2 gap-3">
@@ -160,6 +234,8 @@ export default function Hero() {
                                         "React Native",
                                         "Figma",
                                         "TypeScript",
+                                        "Design Systems",
+                                        "Prototyping",
                                     ].map((tag) => (
                                         <div
                                             key={tag}
@@ -171,20 +247,28 @@ export default function Hero() {
                                 </div>
 
                                 <div className="rounded-xl border border-base-300 p-4 bg-gradient-to-br from-base-100 to-base-200">
-                                    <p className="text-sm text-base-content/60">
-                                        Recent highlight
-                                    </p>
-                                    <p className="text-base font-semibold mt-1 text-base-content">
-                                        Live communication platform with WebRTC,
-                                        built with Next.js + NestJS.
+                                    <div className="flex items-center justify-between">
+                                        <p className="text-sm text-base-content/60">
+                                            Recent highlight
+                                        </p>
+                                        <span className="text-[11px] px-2.5 py-1 rounded-full bg-secondary/10 text-secondary font-semibold">
+                                            Mobile UI · 50+ screens
+                                        </span>
+                                    </div>
+                                    <p className="text-base font-semibold mt-2 text-base-content leading-relaxed">
+                                        Fitness tracking mobile app UI in Figma:
+                                        50+ screens covering onboarding, goals,
+                                        live workout tracking, progress
+                                        analytics, and social challenges.
                                     </p>
                                     <p className="text-xs text-base-content/60 mt-2">
-                                        Real-time · Secure · Scalable
+                                        Motion-ready prototypes · Component
+                                        library · Developer handoff notes
                                     </p>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </motion.div>
                 </div>
             </div>
             <motion.div
@@ -211,6 +295,6 @@ export default function Hero() {
                     </svg>
                 </motion.div>
             </motion.div>
-        </section>
+        </motion.section>
     );
 }

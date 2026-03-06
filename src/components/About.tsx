@@ -16,14 +16,21 @@ const focusAreas = [
 
 export default function About() {
     return (
-        <section id="about" className="section-padding bg-base-100">
-            <div className="container mx-auto px-4">
-                <div className="text-center mb-12 space-y-3">
-                    <p className="pill mx-auto">About</p>
+        <motion.section
+            id="about"
+            className="section-padding bg-base-100"
+            initial={{ opacity: 0, y: 26 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.3 }}
+            transition={{ duration: 0.65, ease: "easeOut" }}
+        >
+            <div className="container-shell">
+                <div className="mb-12 space-y-3 text-left max-w-3xl mx-auto lg:mx-0">
+                    <p className="pill w-fit">About</p>
                     <h2 className="text-3xl md:text-4xl font-display font-bold">
                         Bridging design craft with engineering discipline
                     </h2>
-                    <p className="text-base-content/80 max-w-2xl mx-auto">
+                    <p className="text-base-content/80 max-w-2xl">
                         I architect experiences end-to-end: research, UX flows,
                         visual systems, and production-grade code that scales
                         gracefully.
@@ -80,22 +87,29 @@ export default function About() {
 
                         <div className="space-y-3">
                             {highlights.map((item) => (
-                                <div
+                                <motion.div
                                     key={item}
+                                    whileHover={{ y: -3, scale: 1.01 }}
                                     className="flex items-center gap-3 rounded-xl bg-base-200 px-4 py-3 border border-base-300"
                                 >
                                     <span className="h-2 w-2 rounded-full bg-primary" />
                                     <p className="text-base text-base-content/80">
                                         {item}
                                     </p>
-                                </div>
+                                </motion.div>
                             ))}
                         </div>
 
                         <div className="grid sm:grid-cols-3 gap-4">
                             {focusAreas.map((focus) => (
-                                <div
+                                <motion.div
                                     key={focus.title}
+                                    whileHover={{ y: -4, scale: 1.02 }}
+                                    transition={{
+                                        type: "spring",
+                                        stiffness: 220,
+                                        damping: 18,
+                                    }}
                                     className="glass-panel rounded-xl p-4 border border-base-200 shadow-ring"
                                 >
                                     <p className="text-sm text-primary font-semibold">
@@ -104,12 +118,12 @@ export default function About() {
                                     <p className="text-sm text-base-content/70 mt-2">
                                         {focus.detail}
                                     </p>
-                                </div>
+                                </motion.div>
                             ))}
                         </div>
                     </motion.div>
                 </div>
             </div>
-        </section>
+        </motion.section>
     );
 }
