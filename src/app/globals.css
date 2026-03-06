@@ -4,48 +4,48 @@
 
 @layer base {
     :root {
-        --background: 0 0% 100%;
-        --foreground: 222.2 84% 4.9%;
+        --background: 214 32% 96%;
+        --foreground: 220 27% 12%;
         --card: 0 0% 100%;
-        --card-foreground: 222.2 84% 4.9%;
+        --card-foreground: 220 27% 12%;
         --popover: 0 0% 100%;
-        --popover-foreground: 222.2 84% 4.9%;
-        --primary: 270 76% 53%; /* purple-500 */
-        --primary-foreground: 210 40% 98%;
-        --secondary: 217 91% 60%; /* blue-500 */
-        --secondary-foreground: 222.2 47.4% 11.2%;
-        --muted: 210 40% 96.1%;
-        --muted-foreground: 215.4 16.3% 46.9%;
-        --accent: 217 91% 60%; /* blue-500 */
-        --accent-foreground: 222.2 47.4% 11.2%;
+        --popover-foreground: 220 27% 12%;
+        --primary: 166 72% 40%; /* emerald */
+        --primary-foreground: 150 100% 96%;
+        --secondary: 196 83% 44%; /* cyan */
+        --secondary-foreground: 210 40% 98%;
+        --muted: 216 32% 92%;
+        --muted-foreground: 221 17% 42%;
+        --accent: 32 94% 52%; /* amber */
+        --accent-foreground: 24 100% 12%;
         --destructive: 0 84.2% 60.2%;
         --destructive-foreground: 210 40% 98%;
-        --border: 214.3 31.8% 91.4%;
-        --input: 214.3 31.8% 91.4%;
-        --ring: 270 76% 53%; /* purple-500 */
-        --radius: 0.5rem;
+        --border: 215 28% 84%;
+        --input: 215 28% 84%;
+        --ring: 166 72% 40%;
+        --radius: 0.75rem;
     }
 
     .dark {
-        --background: 222.2 84% 4.9%;
-        --foreground: 210 40% 98%;
-        --card: 222.2 84% 4.9%;
-        --card-foreground: 210 40% 98%;
-        --popover: 222.2 84% 4.9%;
-        --popover-foreground: 210 40% 98%;
-        --primary: 270 76% 53%; /* purple-500 */
-        --primary-foreground: 222.2 47.4% 11.2%;
-        --secondary: 217 91% 60%; /* blue-500 */
-        --secondary-foreground: 210 40% 98%;
-        --muted: 217.2 32.6% 17.5%;
-        --muted-foreground: 215 20.2% 65.1%;
-        --accent: 217 91% 60%; /* blue-500 */
-        --accent-foreground: 210 40% 98%;
-        --destructive: 0 62.8% 30.6%;
+        --background: 222 47% 6%;
+        --foreground: 210 40% 96%;
+        --card: 224 45% 9%;
+        --card-foreground: 210 40% 96%;
+        --popover: 224 45% 9%;
+        --popover-foreground: 210 40% 96%;
+        --primary: 166 72% 45%;
+        --primary-foreground: 150 100% 96%;
+        --secondary: 196 83% 60%;
+        --secondary-foreground: 222 47% 6%;
+        --muted: 224 35% 15%;
+        --muted-foreground: 215 20% 68%;
+        --accent: 32 94% 60%;
+        --accent-foreground: 222 47% 6%;
+        --destructive: 0 72% 45%;
         --destructive-foreground: 210 40% 98%;
-        --border: 217.2 32.6% 17.5%;
-        --input: 217.2 32.6% 17.5%;
-        --ring: 270 76% 53%; /* purple-500 */
+        --border: 224 35% 16%;
+        --input: 224 35% 16%;
+        --ring: 166 72% 45%;
     }
 }
 
@@ -55,6 +55,11 @@
     }
     body {
         @apply bg-background text-foreground;
+        background-image: radial-gradient(circle at 20% 20%,
+                rgba(20, 184, 166, 0.08),
+                transparent 35%),
+            radial-gradient(circle at 80% 0%, rgba(245, 158, 11, 0.12), transparent 25%),
+            linear-gradient(135deg, rgba(17, 24, 39, 0.05), rgba(17, 24, 39, 0));
     }
 }
 
@@ -65,5 +70,39 @@
 
     .container-custom {
         @apply container mx-auto px-4 sm:px-6 lg:px-8;
+    }
+
+    .glass-panel {
+        @apply bg-base-100/70 backdrop-blur-xl border border-base-200 shadow-xl;
+    }
+
+    .pill {
+        @apply inline-flex items-center gap-2 rounded-full px-4 py-2 bg-base-200 text-sm font-medium border border-base-300;
+    }
+
+    .grid-lines {
+        position: relative;
+    }
+
+    .grid-lines::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: linear-gradient(
+                rgba(148, 163, 184, 0.08) 1px,
+                transparent 1px
+            ),
+            linear-gradient(
+                90deg,
+                rgba(148, 163, 184, 0.08) 1px,
+                transparent 1px
+            );
+        background-size: 120px 120px;
+        mask-image: radial-gradient(circle at center, black, transparent 70%);
+        pointer-events: none;
+    }
+
+    .shadow-ring {
+        box-shadow: 0 0 0 1px rgba(20, 184, 166, 0.2), 0 20px 60px rgba(0, 0, 0, 0.12);
     }
 }

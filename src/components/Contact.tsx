@@ -23,7 +23,7 @@ const socialLinks = [
     },
     {
         name: "LinkedIn",
-        url: "https://www.linkedin.com/in/biruk-gebisa-188747337/",
+        url: "https://www.linkedin.com/in/biruk-gebisa-285b64395/",
         icon: (
             <svg
                 className="w-6 h-6"
@@ -53,118 +53,95 @@ const socialLinks = [
 
 export default function Contact() {
     return (
-        <section id="contact" className="py-20 bg-base-100">
+        <section id="contact" className="section-padding bg-base-100">
             <div className="container mx-auto px-4">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
                     viewport={{ once: true }}
-                    className="text-center mb-12"
+                    className="text-center mb-12 space-y-3"
                 >
-                    <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                        Let's Connect
+                    <p className="pill mx-auto">Contact</p>
+                    <h2 className="text-3xl md:text-4xl font-display font-bold">
+                        Let’s build something memorable
                     </h2>
                     <p className="text-base-content/80 max-w-2xl mx-auto">
-                        Feel free to reach out through any of these channels
+                        Tell me about your product, your users, and your goals.
+                        I’ll respond quickly.
                     </p>
                 </motion.div>
 
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.2 }}
+                    transition={{ duration: 0.5, delay: 0.1 }}
                     viewport={{ once: true }}
-                    className="max-w-3xl mx-auto"
+                    className="max-w-4xl mx-auto grid md:grid-cols-[1.1fr_0.9fr] gap-8"
                 >
-                    <div className="grid md:grid-cols-2 gap-8">
-                        {/* Contact Info */}
-                        <div className="bg-base-200 p-8 rounded-xl shadow-lg">
-                            <h3 className="text-xl font-bold mb-6">
-                                Contact Information
-                            </h3>
-                            <div className="space-y-6">
-                                <div>
-                                    <h4 className="text-lg font-semibold mb-2 flex items-center">
-                                        <svg
-                                            className="w-5 h-5 mr-2"
-                                            fill="none"
-                                            stroke="currentColor"
-                                            viewBox="0 0 24 24"
-                                        >
-                                            <path
-                                                strokeLinecap="round"
-                                                strokeLinejoin="round"
-                                                strokeWidth="2"
-                                                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                                            />
-                                        </svg>
-                                        Email
-                                    </h4>
-                                    <a
-                                        href="mailto:birukgebisa7@gmail.com"
-                                        className="text-primary hover:text-primary/80 transition-colors"
-                                    >
-                                        birukgebisa7@gmail.com
-                                    </a>
-                                </div>
+                    <div className="glass-panel rounded-2xl p-8 shadow-ring">
+                        <h3 className="text-xl font-semibold mb-4">
+                            Direct message
+                        </h3>
+                        <p className="text-base-content/70 mb-6">
+                            Prefer email? I answer within one business day.
+                        </p>
 
-                                <div>
-                                    <h4 className="text-lg font-semibold mb-2 flex items-center">
-                                        <svg
-                                            className="w-5 h-5 mr-2"
-                                            fill="none"
-                                            stroke="currentColor"
-                                            viewBox="0 0 24 24"
-                                        >
-                                            <path
-                                                strokeLinecap="round"
-                                                strokeLinejoin="round"
-                                                strokeWidth="2"
-                                                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                                            />
-                                            <path
-                                                strokeLinecap="round"
-                                                strokeLinejoin="round"
-                                                strokeWidth="2"
-                                                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                                            />
-                                        </svg>
-                                        Location
-                                    </h4>
-                                    <p className="text-base-content/80">
-                                        Adama, Ethiopia
-                                    </p>
+                        <div className="space-y-4">
+                            <a
+                                href="mailto:birukgebisa7@gmail.com"
+                                className="flex items-center justify-between rounded-xl bg-base-200 px-4 py-3 border border-base-300 hover:border-primary transition-colors"
+                            >
+                                <div className="flex items-center gap-3">
+                                    <span className="w-10 h-10 rounded-lg bg-primary/10 text-primary flex items-center justify-center">
+                                        ✉️
+                                    </span>
+                                    <div>
+                                        <p className="text-sm text-base-content/60">
+                                            Email
+                                        </p>
+                                        <p className="font-semibold">
+                                            birukgebisa7@gmail.com
+                                        </p>
+                                    </div>
                                 </div>
+                                <span className="text-xs text-base-content/60">
+                                    Open anytime
+                                </span>
+                            </a>
+
+                            <div className="rounded-xl bg-base-200 px-4 py-3 border border-base-300">
+                                <p className="text-sm text-base-content/60">
+                                    Location
+                                </p>
+                                <p className="font-semibold">Adama, Ethiopia</p>
                             </div>
                         </div>
+                    </div>
 
-                        {/* Social Links */}
-                        <div className="bg-base-200 p-8 rounded-xl shadow-lg">
-                            <h3 className="text-xl font-bold mb-6">
-                                Connect With Me
-                            </h3>
-                            <div className="space-y-6">
-                                <p className="text-base-content/80">
-                                    I'm always open to discussing new projects,
-                                    creative ideas, or opportunities to be part
-                                    of your visions.
-                                </p>
-                                <div className="flex space-x-6">
-                                    {socialLinks.map((link) => (
-                                        <a
-                                            key={link.name}
-                                            href={link.url}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="text-base-content/60 hover:text-primary transition-colors transform hover:scale-110 duration-200"
-                                            aria-label={link.name}
-                                        >
-                                            {link.icon}
-                                        </a>
-                                    ))}
-                                </div>
-                            </div>
+                    <div className="glass-panel rounded-2xl p-8 shadow-ring">
+                        <h3 className="text-xl font-semibold mb-4">Connect</h3>
+                        <p className="text-base-content/70 mb-6">
+                            Find my work, writing, and prototypes here.
+                        </p>
+                        <div className="grid grid-cols-2 gap-4">
+                            {socialLinks.map((link) => (
+                                <a
+                                    key={link.name}
+                                    href={link.url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="flex items-center gap-3 rounded-xl bg-base-200 px-4 py-3 border border-base-300 hover:border-primary transition-colors"
+                                    aria-label={link.name}
+                                >
+                                    <span className="text-base-content/70">
+                                        {link.icon}
+                                    </span>
+                                    <span className="font-medium">
+                                        {link.name}
+                                    </span>
+                                </a>
+                            ))}
                         </div>
                     </div>
                 </motion.div>

@@ -34,57 +34,54 @@ const dsaTopics = [
 
 export default function Achievements() {
     return (
-        <section id="achievements" className="py-20 bg-base-100">
+        <section id="achievements" className="section-padding bg-base-100">
             <div className="container mx-auto px-4">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
                     viewport={{ once: true }}
-                    className="text-center mb-12"
+                    className="text-center mb-12 space-y-3"
                 >
-                    <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                        Competitive Programming & Achievements
+                    <p className="pill mx-auto">Competitive edge</p>
+                    <h2 className="text-3xl md:text-4xl font-display font-bold">
+                        Craft backed by problem-solving rigor
                     </h2>
                     <p className="text-base-content/80 max-w-2xl mx-auto">
-                        Mastery of Data Structures and Algorithms with active
-                        participation in competitive programming platforms
+                        Continual practice on coding platforms keeps my thinking
+                        sharp and my systems reliable.
                     </p>
                 </motion.div>
 
-                {/* Platform Stats */}
-                <div className="grid md:grid-cols-3 gap-8 mb-16">
+                <div className="grid md:grid-cols-3 gap-8 mb-14">
                     {achievements.map((achievement, index) => (
                         <motion.div
                             key={achievement.title}
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.5, delay: index * 0.1 }}
+                            transition={{ duration: 0.5, delay: index * 0.05 }}
                             viewport={{ once: true }}
-                            className="bg-base-200 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow"
+                            className="glass-panel rounded-2xl p-6 text-center shadow-ring"
                         >
-                            <div className="flex items-center justify-center mb-4">
-                                <span className="text-4xl">
-                                    {achievement.icon}
-                                </span>
+                            <div className="text-4xl mb-3">
+                                {achievement.icon}
                             </div>
-                            <h3 className="text-xl font-bold text-center mb-2">
+                            <h3 className="text-xl font-semibold mb-1">
                                 {achievement.title}
                             </h3>
-                            <p className="text-base-content/80 text-center">
+                            <p className="text-base-content/70">
                                 {achievement.stats}
                             </p>
                         </motion.div>
                     ))}
                 </div>
 
-                {/* DSA Topics */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
                     viewport={{ once: true }}
-                    className="bg-base-200 rounded-xl p-8 shadow-lg"
+                    className="glass-panel rounded-2xl p-8 shadow-ring"
                 >
                     <h3 className="text-2xl font-bold mb-6 text-center">
                         Data Structures & Algorithms
@@ -97,14 +94,12 @@ export default function Achievements() {
                                 whileInView={{ opacity: 1, scale: 1 }}
                                 transition={{
                                     duration: 0.3,
-                                    delay: index * 0.1,
+                                    delay: index * 0.05,
                                 }}
                                 viewport={{ once: true }}
-                                className="bg-base-100 p-4 rounded-lg text-center hover:bg-base-300 transition-colors"
+                                className="rounded-lg border border-base-300 bg-base-200 px-3 py-2 text-center text-sm font-medium"
                             >
-                                <span className="text-sm font-medium">
-                                    {topic}
-                                </span>
+                                {topic}
                             </motion.div>
                         ))}
                     </div>

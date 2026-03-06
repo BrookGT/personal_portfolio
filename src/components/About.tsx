@@ -2,185 +2,113 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-
-const infoCards = [
-    {
-        title: "Education",
-        content: "4th Year Software Engineering Student at ASTU",
-        icon: (
-            <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-            >
-                <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M12 14l9-5-9-5-9 5 9 5z"
-                />
-                <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M12 14l9-5-9-5-9 5 9 5z"
-                />
-                <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M12 14l9-5-9-5-9 5 9 5z"
-                />
-            </svg>
-        ),
-    },
-    {
-        title: "Location",
-        content: "Adama, Ethiopia",
-        icon: (
-            <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-            >
-                <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                />
-                <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                />
-            </svg>
-        ),
-    },
-    {
-        title: "Experience",
-        content: "UI/UX & Graphics Designer",
-        icon: (
-            <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-            >
-                <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                />
-            </svg>
-        ),
-    },
+const highlights = [
+    "Software Engineering @ ASTU · Expected graduation 2026",
+    "Product-focused UI/UX designer",
+    "Hands-on with real-time systems & mobile",
 ];
 
-const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-        opacity: 1,
-        transition: {
-            staggerChildren: 0.1,
-        },
-    },
-};
-
-const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-        opacity: 1,
-        y: 0,
-        transition: {
-            duration: 0.5,
-            ease: "easeOut",
-        },
-    },
-};
+const focusAreas = [
+    { title: "Design systems", detail: "Token-driven, consistent, accessible" },
+    { title: "Engineering", detail: "Next.js, React Native, TypeScript" },
+    { title: "Collaboration", detail: "Clear handoffs, rapid iteration" },
+];
 
 export default function About() {
     return (
-        <section id="about" className="py-20 bg-base-100">
+        <section id="about" className="section-padding bg-base-100">
             <div className="container mx-auto px-4">
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5 }}
-                    viewport={{ once: true }}
-                    className="text-center mb-12"
-                >
-                    <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                        About Me
+                <div className="text-center mb-12 space-y-3">
+                    <p className="pill mx-auto">About</p>
+                    <h2 className="text-3xl md:text-4xl font-display font-bold">
+                        Bridging design craft with engineering discipline
                     </h2>
                     <p className="text-base-content/80 max-w-2xl mx-auto">
-                        A passionate software engineering student with a keen
-                        eye for design and user experience
+                        I architect experiences end-to-end: research, UX flows,
+                        visual systems, and production-grade code that scales
+                        gracefully.
                     </p>
-                </motion.div>
+                </div>
 
-                <motion.div
-                    variants={containerVariants}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true }}
-                    className="grid md:grid-cols-2 gap-12 items-center"
-                >
-                    {/* Image Side */}
+                <div className="grid lg:grid-cols-[1.05fr_0.95fr] gap-10 items-center">
                     <motion.div
-                        variants={itemVariants}
-                        className="relative w-full h-auto rounded-xl overflow-hidden shadow-xl"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6 }}
+                        viewport={{ once: true }}
+                        className="relative"
                     >
-                        <Image
-                            src="/assets/photo-experience.jpg"
-                            alt="Experience"
-                            width={800}
-                            height={600}
-                            className="w-full h-auto object-cover"
-                            quality={100}
-                            priority
-                            unoptimized
-                        />
+                        <div className="absolute -inset-4 bg-gradient-to-br from-primary/15 via-secondary/10 to-accent/15 blur-3xl" />
+                        <div className="relative overflow-hidden rounded-2xl border border-base-200 shadow-ring bg-base-100">
+                            <Image
+                                src="/assets/photo-experience.jpg"
+                                alt="Working session"
+                                width={900}
+                                height={700}
+                                className="w-full h-auto object-cover"
+                                priority
+                                unoptimized
+                            />
+                            <div className="absolute left-6 top-6 glass-panel rounded-xl p-4 max-w-xs">
+                                <p className="text-sm text-base-content/60">
+                                    Based in
+                                </p>
+                                <p className="text-lg font-semibold">
+                                    Adama, Ethiopia
+                                </p>
+                                <p className="text-sm text-base-content/60 mt-2">
+                                    Blending East African creativity with global
+                                    product standards.
+                                </p>
+                            </div>
+                        </div>
                     </motion.div>
 
-                    {/* Content Side */}
-                    <motion.div variants={itemVariants} className="space-y-8">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.1 }}
+                        viewport={{ once: true }}
+                        className="space-y-6"
+                    >
                         <p className="text-lg text-base-content/80">
-                            I am Software Engineering student at Adama Science
-                            and Technology University, passionate about creating
-                            beautiful and functional digital experiences. With
-                            expertise in both development and design, I bridge
-                            the gap between aesthetics and functionality.
+                            From prototypes to production, I obsess over usable
+                            flows, resilient architecture, and purposeful
+                            visuals. I collaborate closely with founders and
+                            teams to de-risk ideas and launch confidently.
                         </p>
 
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                            {infoCards.map((card) => (
-                                <motion.div
-                                    key={card.title}
-                                    variants={itemVariants}
-                                    className="bg-base-200 rounded-xl p-6 text-center hover:shadow-lg transition-shadow"
+                        <div className="space-y-3">
+                            {highlights.map((item) => (
+                                <div
+                                    key={item}
+                                    className="flex items-center gap-3 rounded-xl bg-base-200 px-4 py-3 border border-base-300"
                                 >
-                                    <div className="text-primary mb-4 flex justify-center">
-                                        {card.icon}
-                                    </div>
-                                    <h3 className="text-lg font-bold mb-2">
-                                        {card.title}
-                                    </h3>
-                                    <p className="text-base-content/80">
-                                        {card.content}
+                                    <span className="h-2 w-2 rounded-full bg-primary" />
+                                    <p className="text-base text-base-content/80">
+                                        {item}
                                     </p>
-                                </motion.div>
+                                </div>
+                            ))}
+                        </div>
+
+                        <div className="grid sm:grid-cols-3 gap-4">
+                            {focusAreas.map((focus) => (
+                                <div
+                                    key={focus.title}
+                                    className="glass-panel rounded-xl p-4 border border-base-200 shadow-ring"
+                                >
+                                    <p className="text-sm text-primary font-semibold">
+                                        {focus.title}
+                                    </p>
+                                    <p className="text-sm text-base-content/70 mt-2">
+                                        {focus.detail}
+                                    </p>
+                                </div>
                             ))}
                         </div>
                     </motion.div>
-                </motion.div>
+                </div>
             </div>
         </section>
     );

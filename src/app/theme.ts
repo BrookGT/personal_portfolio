@@ -1,23 +1,23 @@
 export const theme = {
     colors: {
         primary: {
-            DEFAULT: "#8B5CF6", // purple-500
-            dark: "#7C3AED", // purple-600
-            light: "#A78BFA", // purple-400
+            DEFAULT: "#10b981", // emerald-500
+            dark: "#059669", // emerald-600
+            light: "#34d399", // emerald-400
         },
         secondary: {
-            DEFAULT: "#3B82F6", // blue-500
-            dark: "#2563EB", // blue-600
-            light: "#60A5FA", // blue-400
+            DEFAULT: "#06b6d4", // cyan-500
+            dark: "#0891b2", // cyan-600
+            light: "#22d3ee", // cyan-400
         },
         accent: {
-            DEFAULT: "#2563EB", // blue-600
-            dark: "#1D4ED8", // blue-700
-            light: "#3B82F6", // blue-500
+            DEFAULT: "#f59e0b", // amber-500
+            dark: "#d97706", // amber-600
+            light: "#fbbf24", // amber-400
         },
     },
     fonts: {
-        heading: "var(--font-inter)",
+        heading: "var(--font-display)",
         body: "var(--font-inter)",
     },
     breakpoints: {

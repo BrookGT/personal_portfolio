@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 
@@ -9,6 +9,12 @@ const inter = Inter({
     display: "swap",
     preload: true,
     fallback: ["system-ui", "arial"],
+});
+
+const spaceGrotesk = Space_Grotesk({
+    subsets: ["latin"],
+    variable: "--font-display",
+    display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -24,7 +30,9 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en" suppressHydrationWarning>
-            <body className={`${inter.variable} font-sans antialiased`}>
+            <body
+                className={`${inter.variable} ${spaceGrotesk.variable} font-sans antialiased`}
+            >
                 <ThemeProvider
                     attribute="data-theme"
                     defaultTheme="system"

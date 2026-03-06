@@ -2,156 +2,149 @@
 
 import { motion } from "framer-motion";
 
-const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-        opacity: 1,
-        transition: {
-            staggerChildren: 0.1,
-        },
-    },
-};
-
-const categoryVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-        opacity: 1,
-        y: 0,
-        transition: {
-            duration: 0.5,
-            ease: "easeOut",
-        },
-    },
-};
-
-const skillVariants = {
-    hidden: { opacity: 0, scale: 0.8 },
-    visible: {
-        opacity: 1,
-        scale: 1,
-        transition: {
-            duration: 0.3,
-        },
-    },
-    hover: {
-        scale: 1.05,
-        transition: {
-            duration: 0.2,
-        },
-    },
-};
-
 const skills = [
     {
         category: "Frontend",
         items: [
-            { name: "React", icon: "⚛️", level: "Advanced" },
-            { name: "Next.js", icon: "▲", level: "Advanced" },
-            { name: "Tailwind CSS", icon: "🎨", level: "Advanced" },
-            { name: "HTML/CSS", icon: "🌐", level: "Expert" },
+            { name: "React", icon: "⚛️", level: "Advanced", proficiency: 90 },
+            { name: "Next.js", icon: "▲", level: "Advanced", proficiency: 90 },
+            {
+                name: "Tailwind CSS",
+                icon: "🎨",
+                level: "Advanced",
+                proficiency: 88,
+            },
+            { name: "HTML/CSS", icon: "🌐", level: "Expert", proficiency: 95 },
         ],
     },
     {
         category: "Backend",
         items: [
-            { name: "Node.js", icon: "🟢", level: "Advanced" },
-            { name: "Express", icon: "🚂", level: "Advanced" },
+            { name: "Node.js", icon: "🟢", level: "Advanced", proficiency: 85 },
+            { name: "Express", icon: "🚂", level: "Advanced", proficiency: 82 },
         ],
     },
     {
         category: "Mobile",
         items: [
-            { name: "React Native", icon: "📱", level: "Expert" },
-            { name: "Flutter", icon: "🎯", level: "Advanced" },
+            {
+                name: "React Native",
+                icon: "📱",
+                level: "Expert",
+                proficiency: 92,
+            },
+            { name: "Flutter", icon: "🎯", level: "Advanced", proficiency: 80 },
         ],
     },
     {
         category: "UI/UX Design",
         items: [
-            { name: "Figma", icon: "🎯", level: "Advanced" },
-            { name: "Adobe Illustrator", icon: "✨", level: "Intermediate" },
-            { name: "Canva", icon: "🎨", level: "Expert" },
+            { name: "Figma", icon: "🎯", level: "Advanced", proficiency: 90 },
+            {
+                name: "Adobe Illustrator",
+                icon: "✨",
+                level: "Intermediate",
+                proficiency: 75,
+            },
+            { name: "Canva", icon: "🎨", level: "Expert", proficiency: 92 },
         ],
     },
     {
         category: "Competitive Programming",
         items: [
-            { name: "DSA", icon: "📊", level: "Advanced" },
-            { name: "LeetCode", icon: "💻", level: "150+ Problems" },
-            { name: "Codeforces", icon: "🏆", level: "Active" },
+            { name: "DSA", icon: "📊", level: "Advanced", proficiency: 85 },
+            {
+                name: "LeetCode",
+                icon: "💻",
+                level: "150+ Problems",
+                proficiency: 80,
+            },
+            {
+                name: "Codeforces",
+                icon: "🏆",
+                level: "Active",
+                proficiency: 78,
+            },
         ],
     },
 ];
 
 export default function Skills() {
     return (
-        <section id="skills" className="py-20 bg-base-200">
+        <section id="skills" className="section-padding bg-base-200">
             <div className="container mx-auto px-4">
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5 }}
-                    viewport={{ once: true }}
-                    className="text-center mb-12"
-                >
-                    <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                        Skills & Expertise
+                <div className="text-center mb-12 space-y-3">
+                    <p className="pill mx-auto">Skills</p>
+                    <h2 className="text-3xl md:text-4xl font-display font-bold">
+                        A toolkit tuned for shipping fast and clean
                     </h2>
                     <p className="text-base-content/80 max-w-2xl mx-auto">
-                        I am a software engineer who builds sleek, scalable web
-                        and mobile products. Passionate about code, design, and
-                        turning ideas into reality.
+                        Balanced between product thinking and execution—design
+                        systems, real-time experiences, and performant frontends
+                        backed by reliable APIs.
                     </p>
-                </motion.div>
+                </div>
 
-                <motion.div
-                    variants={containerVariants}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true }}
-                    className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
-                >
-                    {skills.map((category, categoryIndex) => (
-                        <motion.div
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {skills.map((category) => (
+                        <div
                             key={category.category}
-                            variants={categoryVariants}
-                            className="bg-base-100 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow"
+                            className="glass-panel rounded-2xl p-6 shadow-ring"
                         >
-                            <h3 className="text-xl font-bold mb-6 text-primary">
-                                {category.category}
-                            </h3>
-                            <div className="grid grid-cols-2 gap-4">
-                                {category.items.map((skill, skillIndex) => (
+                            <div className="flex items-center justify-between mb-4">
+                                <h3 className="text-xl font-semibold text-primary">
+                                    {category.category}
+                                </h3>
+                                <span className="text-xs px-3 py-1 rounded-full bg-primary/10 text-primary font-medium">
+                                    Core stack
+                                </span>
+                            </div>
+
+                            <div className="space-y-4">
+                                {category.items.map((skill) => (
                                     <motion.div
                                         key={skill.name}
-                                        variants={skillVariants}
-                                        whileHover="hover"
-                                        className="group relative"
+                                        whileHover={{ y: -2, scale: 1.01 }}
+                                        className="p-4 rounded-xl bg-base-200 border border-base-300"
                                     >
-                                        <div className="flex flex-col items-center p-4 bg-base-200 rounded-lg hover:bg-base-300 transition-colors">
-                                            <span className="text-2xl mb-2">
-                                                {skill.icon}
-                                            </span>
-                                            <span className="text-sm font-medium text-center">
-                                                {skill.name}
-                                            </span>
-                                            <span className="text-xs text-base-content/60 mt-1">
-                                                {skill.level}
+                                        <div className="flex items-center justify-between">
+                                            <div className="flex items-center gap-3">
+                                                <span className="text-xl">
+                                                    {skill.icon}
+                                                </span>
+                                                <div>
+                                                    <p className="font-semibold text-base-content">
+                                                        {skill.name}
+                                                    </p>
+                                                    <p className="text-xs text-base-content/60">
+                                                        {skill.level}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <span className="text-sm font-medium text-base-content/70">
+                                                {skill.proficiency}%
                                             </span>
                                         </div>
-                                        <motion.div
-                                            initial={{ opacity: 0, y: 10 }}
-                                            whileHover={{ opacity: 1, y: 0 }}
-                                            className="absolute -top-2 left-1/2 transform -translate-x-1/2 -translate-y-full opacity-0 group-hover:opacity-100 transition-opacity bg-base-300 text-xs px-2 py-1 rounded whitespace-nowrap"
-                                        >
-                                            {skill.name} - {skill.level}
-                                        </motion.div>
+                                        <div className="mt-3 h-2 rounded-full bg-base-300 overflow-hidden">
+                                            <motion.div
+                                                initial={{ width: 0 }}
+                                                whileInView={{
+                                                    width: `${skill.proficiency}%`,
+                                                }}
+                                                transition={{
+                                                    duration: 0.6,
+                                                    ease: "easeOut",
+                                                }}
+                                                viewport={{ once: true }}
+                                                className="h-full rounded-full bg-gradient-to-r from-primary via-secondary to-accent"
+                                            />
+                                        </div>
                                     </motion.div>
                                 ))}
                             </div>
-                        </motion.div>
+                        </div>
                     ))}
-                </motion.div>
+                </div>
             </div>
         </section>
     );
