@@ -56,14 +56,14 @@ export default function About() {
                                 priority
                                 unoptimized
                             />
-                            <div className="absolute left-6 top-6 glass-panel rounded-xl p-4 max-w-xs">
-                                <p className="text-sm text-base-content/60">
+                            <div className="absolute left-4 top-4 sm:left-6 sm:top-6 glass-panel rounded-xl p-3 sm:p-4 max-w-[72%] sm:max-w-xs">
+                                <p className="text-[11px] sm:text-sm text-base-content/60">
                                     Based in
                                 </p>
-                                <p className="text-lg font-semibold">
+                                <p className="text-base sm:text-lg font-semibold">
                                     Adama, Ethiopia
                                 </p>
-                                <p className="text-sm text-base-content/60 mt-2">
+                                <p className="text-xs sm:text-sm text-base-content/60 mt-2">
                                     Blending East African creativity with global
                                     product standards.
                                 </p>
